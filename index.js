@@ -59,4 +59,4 @@ client.distube
     channel.send("❌ Error playing song.");
   });
 
-client.login("YOUR_BOT_TOKEN");
+client.login(process.env.DISCORD_TOKEN);
