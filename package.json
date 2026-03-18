@@ -1,13 +1,10 @@
 {
   "name": "fbdn-bot",
   "version": "1.0.0",
-  "description": "Music + Moderation Bot",
+  "description": "Music Bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "engines": {
-    "node": "18.x"
+    "start": "npm install && node index.js"
   },
   "dependencies": {
     "discord.js": "^14.14.1",
