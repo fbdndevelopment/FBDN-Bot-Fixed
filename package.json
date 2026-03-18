@@ -1,0 +1,19 @@
+{
+  "name": "fbdn-bot",
+  "version": "1.0.0",
+  "description": "Music + Moderation Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "@discordjs/voice": "^0.16.0",
+    "@discordjs/opus": "^0.9.0",
+    "distube": "^4.0.4",
+    "@distube/ytdl-core": "^4.13.3"
+  }
+}
