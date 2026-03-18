@@ -23,17 +23,16 @@ client.on("messageCreate", async (message) => {
 
   if (command === "play") {
     const voiceChannel = message.member.voice.channel;
-    if (!voiceChannel) return message.reply("❌ Join a voice channel!");
+    if (!voiceChannel) return message.reply("❌ Join a voice channel first!");
 
     const query = args.join(" ");
-    if (!query) return message.reply("❌ Enter a song!");
+    if (!query) return message.reply("❌ Enter a song name!");
 
     try {
-      const search = await play.search(query, { limit: 1 });
-      if (!search.length) return message.reply("❌ No results found.");
+      const result = await play.search(query, { limit: 1 });
+      if (!result.length) return message.reply("❌ No results found.");
 
-      const url = search[0].url;
-      const stream = await play.stream(url);
+      const stream = await play.stream(result[0].url);
 
       const connection = joinVoiceChannel({
         channelId: voiceChannel.id,
@@ -49,7 +48,7 @@ client.on("messageCreate", async (message) => {
       player.play(resource);
       connection.subscribe(player);
 
-      message.reply(`🎶 Now playing: **${search[0].title}**`);
+      message.reply(`🎶 Now playing: ${result[0].title}`);
 
     } catch (err) {
       console.error(err);
