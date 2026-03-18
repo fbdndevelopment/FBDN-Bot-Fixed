@@ -33,7 +33,6 @@ client.on("messageCreate", async (message) => {
       if (!search.length) return message.reply("❌ No results found.");
 
       const url = search[0].url;
-
       const stream = await play.stream(url);
 
       const connection = joinVoiceChannel({
