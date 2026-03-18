@@ -8,7 +8,7 @@ module.exports = {
     if (!query) return message.reply("❌ Provide a song name!");
 
     try {
-      await client.play-dl.play(voiceChannel, query, {
+      await client.ply-dl.play(voiceChannel, query, {
         member: message.member,
         textChannel: message.channel
       });
