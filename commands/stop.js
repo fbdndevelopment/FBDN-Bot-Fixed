@@ -1,7 +1,7 @@
 module.exports = {
   name: "stop",
   execute(message, args, client) {
-    const queue = client.distube.getQueue(message);
+    const queue = client.play-dl.getQueue(message);
     if (!queue) return message.reply("❌ Nothing playing.");
 
     queue.stop();
